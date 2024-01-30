@@ -24,3 +24,13 @@ document.querySelecctor("#reload").addEventListener("click", () => {
     `Try typing in here immediately after pressing "Generate primes"`;
     document.location.reload();
 })
+
+
+// Practicing creating a worker.
+const additionWorker = new Worker("addition.js");
+
+additionWorker.postMessage([4, 5]);
+
+additionWorker.addEventListener("message", (message) => {
+    console.log(`The solution is: ${message}`)
+})
