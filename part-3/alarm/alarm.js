@@ -56,3 +56,25 @@ newBtn.addEventListener("click", async () => {
         output.textContent = `Couldn't set alarm: ${error}`;
     }
 });
+
+
+// An asynchronous function that would find the nth fibonacci number.
+async function fibonacci(n) {
+    let num1 = 0;
+    let num2 = 1;
+    let sum;
+
+    // Looping until n
+    for ( i = 0; i < n; i++) {
+        sum = num1 + num2;
+        num1 = num2;
+        num2 = sum;
+    }
+    // returning the nth number in sequence.
+    return num2;
+}
+
+const fourteenthNum = await fibonacci(14);
+
+// This console.log won't run until the fourteenth nubmer is found since await was used.
+console.log(fourteenthNum);
